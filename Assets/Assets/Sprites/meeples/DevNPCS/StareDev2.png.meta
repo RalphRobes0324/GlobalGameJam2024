@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 37f3804a4ed398447b08ecb847145ab0
+guid: 82f04f9a29c303843b72a9ef8f710f7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1317033129325297563
-    second: meeple_bloodRed_stare_0
+      213: -8278737032944006186
+    second: StareDev2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meeple_bloodRed_stare_0
+      name: StareDev2_0
       rect:
         serializedVersion: 2
         x: 323
         y: 101
-        width: 1452
-        height: 1840
+        width: 1460
+        height: 1846
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9ffad637aa074210800000000000000
-      internalID: 1317033129325297563
+      spriteID: 6db408af7840c1d80800000000000000
+      internalID: -8278737032944006186
       vertices: []
       indices: 
       edges: []

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 52be81e84904a5543ae8964aab30bd09
+guid: 45264759c280ebd4cbf42ca7775ea6f6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3728467578417782188
-    second: meeple_green_stare_0
+      213: -5412061999051863117
+    second: NoStare5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meeple_green_stare_0
+      name: NoStare5_0
       rect:
         serializedVersion: 2
-        x: 323
-        y: 101
-        width: 1460
-        height: 1846
+        x: 372
+        y: 122
+        width: 1326
+        height: 1802
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 452e8dfdd72d14cc0800000000000000
-      internalID: -3728467578417782188
+      spriteID: 3bb8f14494e74e4b0800000000000000
+      internalID: -5412061999051863117
       vertices: []
       indices: 
       edges: []
