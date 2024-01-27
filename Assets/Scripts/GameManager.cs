@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     ///Joke score if message
-    enum JokeScore 
+    public enum JokeScore 
     {
         exclamtionPoint = 1, //! = 1
         atPoint = 2, //@ = 2
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         starPoint = 8, // * = 8
         leftBracket = 9, // ( = 9
         rightBracket = 0, // ) = 0
+        
     }
     // Start is called before the first frame update
     void Start()

@@ -1,26 +1,34 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Jobs;
 
-public class Comedian : GameManager
+public class Comedian : MonoBehaviour
 {
-    
+    //Set up different type of joke
     private string[] comedianJokes = {
         "!", "@", "#", "$", "%", "^", "&",
         "*", "(", ")"
-    };
-
-    
-
-    // Start is called before the first frame update
-    void Start()
+    }; 
+    private string comedianMakeJoke; //This will display UI
+    private string[] getJoke; //Get random joke that was selected 
+   
+    private int lengthJokes;
+    private int giveJokeIndex;
+    private int getJokeIndex;
+    private void Start()
     {
-        
+        lengthJokes = comedianJokes.Length;  //
+        giveJokeIndex = 0;
+        getJokeIndex = 0;
+        getJokeIndex = 0;
     }
-
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+ 
+
     }
 }
