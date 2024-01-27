@@ -310,6 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49bb61b6cc6da049843aa6fa98acf19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doneMakingJoke: 0
+  jokeScore: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
