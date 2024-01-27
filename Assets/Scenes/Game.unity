@@ -241,12 +241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1d0afa8ac45941b6c39f3a89c8511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doneMakingJoke: 0
   comedianMakeJoke: 
-  getJokeLevel: 0
-  checkJokeDone: 0
-  comedian: {fileID: 0}
-  comedian: {fileID: 0}
+  doneMakingJoke: 0
+  jokeScore: 0
 --- !u!212 &1875506415
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -309,8 +306,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875506413}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.32, y: -2.73, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.32, y: -2.7300003, z: 0}
   m_LocalScale: {x: 1.1416354, y: 2.8976564, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,7 +325,7 @@ GameObject:
   - component: {fileID: 1947381947}
   - component: {fileID: 1947381949}
   m_Layer: 0
-  m_Name: Comedian
+  m_Name: obj_Comedian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,6 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49bb61b6cc6da049843aa6fa98acf19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comedianMakeJoke: 
   doneMakingJoke: 0
   jokeScore: 0
 --- !u!1660057539 &9223372036854775807
