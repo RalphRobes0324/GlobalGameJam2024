@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    Comedian getStatusJoke;
+    bool statusJoke;
     ///Joke score if message
     public enum JokeScore 
     {
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        statusJoke = getStatusJoke.doneMakingJoke;
     }
 
     // Update is called once per frame
