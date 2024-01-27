@@ -16,29 +16,24 @@ public class Comedian : GameManager
         "*", "(", ")"
     };
 
-
-    private string comedianMakeJoke;
+    //Track of jokes being created
+    public string comedianMakeJoke;
     private int lengthJoke;
     public bool doneMakingJoke;
 
     private void Start()
     {
-        lengthJoke = comedianJokes.Length;
-        doneMakingJoke = false;
+        lengthJoke = comedianJokes.Length; //get length
+        doneMakingJoke = false; //start creation
     }
     private void Update()
     {
-        if (doneMakingJoke)
+        if (!doneMakingJoke) //checks joke is not made yet
         {
-            Debug.Log(comedianMakeJoke);
-        }
-        else
-        {
-            comedianMakeJoke = GetJokeRandom();
-            
+            comedianMakeJoke = GetJokeRandom(); //get Joke
         }
     }
-
+    //Get Random jokes
     private string GetJokeRandom()
     {
         string joke;
@@ -52,6 +47,7 @@ public class Comedian : GameManager
         return joke;
     }
 
+    //Get Random position of index based on range
     private int RandomNum()
     {
         int pos = UnityEngine.Random.Range(0, lengthJoke);
