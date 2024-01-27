@@ -26,13 +26,11 @@ public class Comedian : MonoBehaviour
    
 
     //Track of jokes being created
-    private string comedianMakeJoke;
+    public string comedianMakeJoke;
     private int lengthJoke;
     public bool doneMakingJoke;
-
-    public int jokeScore;
-
-    private int finalScore;
+    public float jokeScore;
+    private float finalScore;
 
     private void Start()
     {
@@ -46,17 +44,17 @@ public class Comedian : MonoBehaviour
         if (!doneMakingJoke) //checks joke is not made yet
         {
             comedianMakeJoke = GetJokeRandom(); //get Joke
-            Debug.Log(comedianMakeJoke);
+            
         }
-        if(doneMakingJoke && jokeScore == 0)
+        if(doneMakingJoke && jokeScore == 0) //Checks joke is done
         {
             jokeScore = GetScore(comedianMakeJoke);
-            Debug.Log(jokeScore);
+           
         }
         
     }
 
-    private int GetScore(string comedianMakeJoke)
+    private float GetScore(string comedianMakeJoke)
     {
         
         char[] checkPoints = comedianMakeJoke.ToCharArray();
@@ -64,45 +62,46 @@ public class Comedian : MonoBehaviour
         {
             if(c == '!')
             {
-                finalScore += (int)JokeScore.exclamtionPoint;
+                finalScore += (float)JokeScore.exclamtionPoint;
             }
             else if(c == '@')
             {
-                finalScore += (int)JokeScore.atPoint;
+                finalScore += (float)JokeScore.atPoint;
             }
             else if( c == '#')
             {
-                finalScore += (int)JokeScore.hashTagPoint;
+                finalScore += (float)JokeScore.hashTagPoint;
             }
             else if(c == '$')
             {
-                finalScore += (int)JokeScore.dolloarPoint;
+                finalScore += (float)JokeScore.dolloarPoint;
             }
             else if(c == '%')
             {
-                finalScore += (int)JokeScore.precentPoint;
+                finalScore += (float)JokeScore.precentPoint;
             }
             else if(c == '^')
             {
-                finalScore += (int)JokeScore.powerPoint;
+                finalScore += (float)JokeScore.powerPoint;
             }
             else if(c == '&')
             {
-                finalScore += (int)JokeScore.andPoint;
+                finalScore += (float)JokeScore.andPoint;
             }
             else if(c == '*')
             {
-                finalScore += (int)JokeScore.starPoint;
+                finalScore += (float)JokeScore.starPoint;
             }
             else if(c == '(')
             {
-                finalScore += (int)JokeScore.leftBracket;
+                finalScore += (float)JokeScore.leftBracket;
             }
             else
             {
-                finalScore += 0;
+                finalScore += 0.0f;
             }
         }
+
         return finalScore;
     }
 
@@ -118,6 +117,7 @@ public class Comedian : MonoBehaviour
         joke += comedianJokes[RandomNum()];
         joke += comedianJokes[RandomNum()];
         doneMakingJoke = true;
+        
         return joke;
     }
 
@@ -127,5 +127,4 @@ public class Comedian : MonoBehaviour
         int pos = UnityEngine.Random.Range(0, lengthJoke);
         return pos;
     }
-    
 }
