@@ -34,6 +34,15 @@ public class GoToLink : MonoBehaviour
             case "Ned":
                 userLink = "https://wakayrd.carrd.co/";
                 break;
+            case "Ralph":
+                userLink = "https://www.linkedin.com/in/ralph-robes/";
+                break;
+            case "Elijah":
+                userLink = "https://www.linkedin.com/in/elijah-tanimowo/";
+                break;
+            case "Peter":
+                userLink = "https://itch.io/profile/peterzougasmusic";
+                break;
         }
 
         

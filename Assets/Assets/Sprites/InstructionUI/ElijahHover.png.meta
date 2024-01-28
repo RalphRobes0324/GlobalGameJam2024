@@ -103,10 +103,10 @@ TextureImporter:
       name: ElijahHover_0
       rect:
         serializedVersion: 2
-        x: 1108
-        y: 400
-        width: 652
-        height: 202
+        x: 1095
+        y: 381
+        width: 672
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

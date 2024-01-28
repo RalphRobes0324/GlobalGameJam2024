@@ -103,10 +103,10 @@ TextureImporter:
       name: RalphHover_0
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 610
-        width: 710
-        height: 222
+        x: 993
+        y: 701
+        width: 795
+        height: 355
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

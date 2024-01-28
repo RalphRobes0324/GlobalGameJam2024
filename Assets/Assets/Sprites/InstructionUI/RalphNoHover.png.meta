@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c65fb591a57630643a263c4dd5301167
+guid: d226b769eaca72a49b3be34b79f462cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 693340885159443960
-    second: ElijahNotHover_0
+      213: 5093213552642754696
+    second: RalphNoHover_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ElijahNotHover_0
+      name: RalphNoHover_0
       rect:
         serializedVersion: 2
-        x: 1108
-        y: 400
-        width: 652
-        height: 202
+        x: 993
+        y: 701
+        width: 795
+        height: 355
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8fdfe209cdd3f9900800000000000000
-      internalID: 693340885159443960
+      spriteID: 8880a7abdbabea640800000000000000
+      internalID: 5093213552642754696
       vertices: []
       indices: 
       edges: []
