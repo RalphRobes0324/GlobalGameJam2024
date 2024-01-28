@@ -33,17 +33,20 @@ public class GameManager : MonoBehaviour
 
     GameObject comedianObject;
     Comedian comedian;
+	Player player;
 
-   
+	GameObject playerObject;
 
-    private void Start()
+	private void Start()
     {
         comedianObject = GameObject.Find("obj_Comedian");
         comedian = comedianObject.GetComponent<Comedian>();
         gameTimer = 180.0f;
         roundTimer = 5.0f;
 
-    }
+		playerObject = GameObject.Find("obj_Player");
+		player = playerObject.GetComponent<Player>();
+	}
 
     private void Update()
     {
@@ -87,9 +90,13 @@ public class GameManager : MonoBehaviour
             //add thing that makes game over happen
             //like change the scene to the score screen or something
         }
-        
-
-        
     }
+	private void FixedUpdate()
+	{
+		//if (comedian.finalJokeScore )
+        //{
+
+       // }
+	}
 
 }

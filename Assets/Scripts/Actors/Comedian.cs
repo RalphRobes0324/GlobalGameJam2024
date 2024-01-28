@@ -21,9 +21,7 @@ public class Comedian : GameManager
 
     //Get Audience Script and its variables
     GameObject audienceObject;
-    GameObject playerObject;
     GameObject gameManagerObject;
-    Player player;
     GameManager gameManager;
     Audience audience;
 
@@ -35,8 +33,6 @@ public class Comedian : GameManager
         audience = audienceObject.GetComponent<Audience>();
         gameManagerObject = GameObject.Find("Game Manager");
         gameManager = gameManagerObject.GetComponent<GameManager>();
-        playerObject = GameObject.Find("obj_Player");
-        player = playerObject.GetComponent<Player>();
         statusCo = true;
         
 
@@ -50,10 +46,12 @@ public class Comedian : GameManager
         {
             if (gameManager.typeRound == 0) //Check Comedian is ready for a joke
             {
-                string comedianJoke = CreateJoke(); //Create joke
-                finalJokeScore = GetScore(comedianJoke); // get Score
-
-                statusCo = false; //Joke has been made
+                if (finalJokeScore <= 0.0f)
+				{
+					string comedianJoke = CreateJoke(); //Create joke
+					finalJokeScore = GetScore(comedianJoke); // get Score
+					statusCo = false; //Joke has been made
+				}
 
             }
             else //Checks for other conditions
