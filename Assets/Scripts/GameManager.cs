@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
     {
         comedianObject = GameObject.Find("obj_Comedian");
         comedian = comedianObject.GetComponent<Comedian>();
-        gameTimer = 10.0f;
-        roundTimer = 3.0f;
+        gameTimer = 180.0f;
+        roundTimer = 5.0f;
 
     }
 
@@ -58,25 +58,26 @@ public class GameManager : MonoBehaviour
             }
             else if (roundTimer <= 0.0f)
             {
+                roundState = true;
                switch (typeRound)
                 {
                     case 0:
                         Debug.Log("joke over, laugh time");
                         typeRound = 1;
                         roundState = false;
-                        roundTimer = 3.0f;
+                        roundTimer = 5.0f;
                         break;
                     case 1:
                         Debug.Log("laugh over, joke time");
                         typeRound = 0;
                         roundState = false;
-                        roundTimer = 3.0f;
+                        roundTimer = 5.0f;
                         break;
                     case 2:
                         Debug.Log("the staring ends");
                         typeRound = 0;
                         roundState = false;
-                        roundTimer = 3.0f;
+                        roundTimer = 4.0f;
                         break;
                 }
             }
