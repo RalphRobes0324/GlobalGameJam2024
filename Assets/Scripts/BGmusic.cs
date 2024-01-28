@@ -16,13 +16,5 @@ public class BGmusic : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-    }
-
-    void Update()
-    {
-        if (!BGmusic.instance.GetComponent<AudioSource>().isPlaying)
-        {
-            BGmusic.instance.GetComponent<AudioSource>().Play();
-        }
-    }
+    } 
 }
