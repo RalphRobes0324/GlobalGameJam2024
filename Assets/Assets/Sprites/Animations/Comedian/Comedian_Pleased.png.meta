@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Comedian_Pleased_0: 7095778153726140152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
