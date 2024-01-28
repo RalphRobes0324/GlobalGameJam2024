@@ -13,7 +13,7 @@ public class Comedian : GameManager
     
     public float finalJokeScore;
     public bool statusCo;
-    public bool statusAudi;
+    
 
     GameObject audienceObject;
     Audience audience;
@@ -32,6 +32,15 @@ public class Comedian : GameManager
             
             statusCo = false; //Joke has been made
             
+        }
+        else //Checks for other conditions
+        {
+            //Checks if audience is done reacting to joke
+            if(!statusCo && !audience.statusAudi)
+            {
+                finalJokeScore = 0.0f; //reset score
+                statusCo = true; //start over again
+            }
         }
 
     }

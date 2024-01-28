@@ -18,21 +18,19 @@ public class Audience : GameManager
     }
     private void Update()
     {
-        //When the joke is done
+        //Check when joke is done
         if (!comedian.statusCo)
         {
-            statusAudi = true; //Start Action for Audience member
+            statusAudi = true;
         }
-
-        if (statusAudi)
+        //Start reaction to joke
+        if(statusAudi)
         {
-            Debug.Log(comedian.finalJokeScore / audiHumourLevel);
+            Debug.Log(comedian.finalJokeScore);
             statusAudi = false;
         }
-        else
-        {
-            Debug.Log("done reacting");
-        }
+
+
   
     }
 }
