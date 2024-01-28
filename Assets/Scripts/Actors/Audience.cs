@@ -30,9 +30,8 @@ public class Audience : GameManager
         //Start reaction to joke
         if(statusAudi)
         {
-            float judgeThejoke = comedian.finalJokeScore / audiHumourLevel;
-            Debug.Log(judgeThejoke);
-            statusAudi = false;
+            float judgeThejoke = comedian.finalJokeScore / audiHumourLevel; //get Avg
+            statusAudi = false; //Stop reacting
         }
 
 
