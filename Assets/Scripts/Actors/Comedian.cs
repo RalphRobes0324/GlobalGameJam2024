@@ -11,40 +11,61 @@ public class Comedian : GameManager
     private string[] jokes = { "!", "@",
     "#", "$", "%", "^", "&", "*", "(", ")"};
     private char[] calculateJokeChar; //calculating each symbol worth
-    
+
+
+
     //Main functions of Comedian
     public float finalJokeScore;
     public bool statusCo;
-    
+    public float countdownMinutes;
+
     //Get Audience Script and its variables
     GameObject audienceObject;
+    GameObject playerObject;
+    GameObject gameManagerObject;
+    Player player;
+    GameManager gameManager;
     Audience audience;
 
     //Starts when program begin
     private void Start()
     {
+        //Getting Component
         audienceObject = GameObject.Find("obj_Audience");
         audience = audienceObject.GetComponent<Audience>();
+        gameManagerObject = GameObject.Find("Game Manager");
+        gameManager = gameManagerObject.GetComponent<GameManager>();
+        playerObject = GameObject.Find("obj_Player");
+        player = playerObject.GetComponent<Player>();
         statusCo = true;
+        
+
+        countdownMinutes = 60.0f;
     }
     //Update every frame
     private void Update()
     {
-        if(statusCo) //Check Comedian is ready for a joke
+        //Check Round is done
+        if (gameManager.roundState)
         {
-            string comedianJoke = CreateJoke(); //Create joke
-            finalJokeScore = GetScore(comedianJoke); // get Score
-            
-            statusCo = false; //Joke has been made
-            
-        }
-        else //Checks for other conditions
-        {
-            //Checks if audience is done reacting to joke
-            if(!statusCo && !audience.statusAudi)
+            if (gameManager.typeRound == 0) //Check Comedian is ready for a joke
             {
-                finalJokeScore = 0.0f; //reset score
-                statusCo = true; //start over again
+                string comedianJoke = CreateJoke(); //Create joke
+                finalJokeScore = GetScore(comedianJoke); // get Score
+
+                statusCo = false; //Joke has been made
+
+            }
+            else //Checks for other conditions
+            {
+                //Checks if audience is done reacting to joke
+                if (gameManager.typeRound == 1 && !audience.statusAudi)
+                {
+                    
+                    finalJokeScore = 0.0f; //reset score
+                    statusCo = true; //start over again
+                }
+
             }
         }
 
@@ -59,46 +80,40 @@ public class Comedian : GameManager
     {
         calculateJokeChar = comedianJoke.ToCharArray();
         foreach (char c in calculateJokeChar)
-        {
-            if (c == '!')
+        {   
+            switch (c)
             {
-                finalJokeScore += (float)JokeScore.exclamationPoint;
-            }
-            else if (c == '@')
-            {
-                finalJokeScore += (float)JokeScore.atPoint;
-            }
-            else if (c == '#')
-            {
-                finalJokeScore += (float)JokeScore.hashPoint;
-            }
-            else if (c == '$')
-            {
-                finalJokeScore += (float)JokeScore.dollarPoint;
-            }
-            else if (c == '%')
-            {
-                finalJokeScore += (float)JokeScore.precentPoint;
-            }
-            else if (c == '^')
-            {
-                finalJokeScore += (float)JokeScore.powerPoint;
-            }
-            else if (c == '&')
-            {
-                finalJokeScore += (float)JokeScore.andPoint;
-            }
-            else if (c == '*')
-            {
-                finalJokeScore += (float)JokeScore.starPoint;
-            }
-            else if (c == '(')
-            {
-                finalJokeScore += (float)JokeScore.leftBracket;
-            }
-            else
-            {
-                finalJokeScore += 0;
+                case '!':
+                    finalJokeScore += (float)JokeScore.exclamationPoint;
+                    break;
+                case '@':
+                    finalJokeScore += (float)JokeScore.atPoint;
+                    break;
+                case '#':
+                    finalJokeScore += (float)JokeScore.hashPoint;
+                    break;
+                case '$':
+                    finalJokeScore += (float)JokeScore.dollarPoint;
+                    break;
+                case '%':
+                    finalJokeScore += (float)JokeScore.precentPoint;
+                    break;
+                case '^':
+                    finalJokeScore += (float)JokeScore.powerPoint;
+                    break;
+                case '&':
+                    finalJokeScore += (float)JokeScore.andPoint;
+                    break;
+                case '*':
+                    finalJokeScore += (float)JokeScore.starPoint;
+                    break;
+                case '(':
+                    finalJokeScore += (float)JokeScore.leftBracket;
+                    break;
+                default:
+                    finalJokeScore += 0;
+                    break;
+           
             }
         }
         return finalJokeScore;
