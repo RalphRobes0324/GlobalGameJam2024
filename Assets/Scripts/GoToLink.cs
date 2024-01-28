@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoToLink : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class GoToLink : MonoBehaviour
         {
             if(userLink == "Main Menu")
             {
-                Debug.Log("Go back");
+                SceneManager.LoadScene(userLink);
             }
             else
             {
