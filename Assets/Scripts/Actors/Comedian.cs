@@ -46,12 +46,14 @@ public class Comedian : GameManager
     {
             if (gameManager.typeRound == 0) //Check Comedian is ready for a joke
             {
-                if (finalJokeScore <= 0.0f)
+			    animator.SetBool("isTalking", true);
+			    if (finalJokeScore <= 0.0f)
 				{
 					string comedianJoke = CreateJoke(); //Create joke
 					finalJokeScore = GetScore(comedianJoke); // get Score
 					statusCo = false; //Joke has been made
-                    armSwinging = UnityEngine.Random.Range(0, 1);    
+                    armSwinging = UnityEngine.Random.Range(0, 1);    if (armSwinging == 0) { animator.SetBool("armSwinging", false); }
+                    else { animator.SetBool("armSwinging", true); }
 				}
 
             }
@@ -60,13 +62,16 @@ public class Comedian : GameManager
                 //Checks if audience is done reacting to joke
                 if (gameManager.typeRound == 1 && !audience.statusAudi)
                 {
-                    
-                    finalJokeScore = 0.0f; //reset score
+				    animator.SetBool("isTalking", false);
+				    finalJokeScore = 0.0f; //reset score
                     statusCo = true; //start over again
                 }
-
+                if (gameManager.typeRound == 2)
+                {
+				    animator.SetBool("isStaring", false);
+			    }
             }
-        
+            
 
     }
 
