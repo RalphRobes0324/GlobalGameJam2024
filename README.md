@@ -5,7 +5,7 @@ In on the Joke...? is a game where you play as an audience member in a comedy cl
 >
 > **Ralph R.**: Main programmer, Implementation, and DevOps
 >
->**Elijah T.**: Implementation and Coding
+>**Elijah T.**: Implementation and Front End Development
 >
 >**Nedward R.**: UI, Head Artist, Game Design
 >
