@@ -15,10 +15,13 @@ public class Comedian : GameManager
     //Main functions of Comedian
     public float finalJokeScore;
     public bool statusCo;
+    public bool RoundStart;
     
     //Get Audience Script and its variables
     GameObject audienceObject;
+    GameObject playerObject;
     GameObject gameManagerObject;
+    Player player;
     GameManager gameManager;
     Audience audience;
 
@@ -30,27 +33,38 @@ public class Comedian : GameManager
         audience = audienceObject.GetComponent<Audience>();
         gameManagerObject = GameObject.Find("Game Manager");
         gameManager = gameManagerObject.GetComponent<GameManager>();
+        playerObject = GameObject.Find("obj_Player");
+        player = playerObject.GetComponent<Player>();
         statusCo = true;
+        RoundStart = false;
     }
     //Update every frame
     private void Update()
     {
-        if(statusCo) //Check Comedian is ready for a joke
+        //Check Round is done
+        if (RoundStart)
         {
-            string comedianJoke = CreateJoke(); //Create joke
-            finalJokeScore = GetScore(comedianJoke); // get Score
-            
-            statusCo = false; //Joke has been made
-            
-        }
-        else //Checks for other conditions
-        {
-            //Checks if audience is done reacting to joke
-            if(!statusCo && !audience.statusAudi)
+            if (statusCo) //Check Comedian is ready for a joke
             {
-                finalJokeScore = 0.0f; //reset score
-                statusCo = true; //start over again
+                string comedianJoke = CreateJoke(); //Create joke
+                finalJokeScore = GetScore(comedianJoke); // get Score
+
+                statusCo = false; //Joke has been made
+
             }
+            else //Checks for other conditions
+            {
+                //Checks if audience is done reacting to joke
+                if (!statusCo && !audience.statusAudi)
+                {
+                    finalJokeScore = 0.0f; //reset score
+                    statusCo = true; //start over again
+                }
+            }
+        }
+        else
+        {
+
         }
 
     }
