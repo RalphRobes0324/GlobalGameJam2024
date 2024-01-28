@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fcfea673d47ca9d43a6f1f4e141067d6
+guid: a3e688ddec0b9784bb4354660cdad600
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -927520240751057016
-    second: MayaHover_0
+      213: 3286466325965335153
+    second: GoNoHover_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MayaHover_0
+      name: GoNoHover_0
       rect:
         serializedVersion: 2
-        x: 164
-        y: 690
-        width: 791
-        height: 373
+        x: 32
+        y: 32
+        width: 636
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8876c085149c023f0800000000000000
-      internalID: -927520240751057016
+      spriteID: 17a627506bfdb9d20800000000000000
+      internalID: 3286466325965335153
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MayaHover_0: -927520240751057016
+      GoNoHover_0: 3286466325965335153
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

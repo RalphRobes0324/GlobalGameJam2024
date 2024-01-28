@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8f547b8682ad6554e932a701c4e87caf
+guid: c91ef8f2dbae14642bf7daf7d4c52ccc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9105416828152554114
-    second: CodingBG_0
+      213: -5734462457981805174
+    second: NedHover_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CodingBG_0
+      name: NedHover_0
       rect:
         serializedVersion: 2
-        x: 986
-        y: 366
-        width: 839
-        height: 688
+        x: 74
+        y: 288
+        width: 789
+        height: 404
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 282a5e5dc50fc5e70800000000000000
-      internalID: 9105416828152554114
+      spriteID: a8d5e26e6c81b60b0800000000000000
+      internalID: -5734462457981805174
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CodingBG_0: 9105416828152554114
+      NedHover_0: -5734462457981805174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

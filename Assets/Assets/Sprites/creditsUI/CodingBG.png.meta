@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 951e70e0644a8e343a1050d1be195ff2
+guid: 8f547b8682ad6554e932a701c4e87caf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1898384417648243461
-    second: ElijahNoHover_0
+      213: 9105416828152554114
+    second: CodingBG_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ElijahNoHover_0
+      name: CodingBG_0
       rect:
         serializedVersion: 2
-        x: 1095
-        y: 381
-        width: 672
-        height: 308
+        x: 986
+        y: 366
+        width: 839
+        height: 688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5037f0dd19a685a10800000000000000
-      internalID: 1898384417648243461
+      spriteID: 282a5e5dc50fc5e70800000000000000
+      internalID: 9105416828152554114
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ElijahNoHover_0: 1898384417648243461
+      CodingBG_0: 9105416828152554114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

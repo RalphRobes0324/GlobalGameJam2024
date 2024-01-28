@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 282f7309d054091459c0b27bed026c51
+guid: d226b769eaca72a49b3be34b79f462cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4062185762836488186
-    second: BackNotHover_0
+      213: 5093213552642754696
+    second: RalphNoHover_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackNotHover_0
+      name: RalphNoHover_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 28
-        width: 409
-        height: 206
+        x: 993
+        y: 701
+        width: 795
+        height: 355
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6006b72329730a7c0800000000000000
-      internalID: -4062185762836488186
+      spriteID: 8880a7abdbabea640800000000000000
+      internalID: 5093213552642754696
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BackNotHover_0: -4062185762836488186
+      RalphNoHover_0: 5093213552642754696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
