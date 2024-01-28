@@ -43,6 +43,9 @@ public class GoToLink : MonoBehaviour
             case "Peter":
                 userLink = "https://itch.io/profile/peterzougasmusic";
                 break;
+            case "Back":
+                userLink = "Main Menu";
+                break;
         }
 
         
@@ -50,7 +53,17 @@ public class GoToLink : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Application.OpenURL(userLink);
+        if(!string.IsNullOrEmpty(userLink))
+        {
+            if(userLink == "Main Menu")
+            {
+                Debug.Log("Go back");
+            }
+            else
+            {
+                Application.OpenURL(userLink);
+            }
+        }
     }
     private void OnMouseOver()
     {

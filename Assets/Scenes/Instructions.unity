@@ -402,6 +402,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1155529437}
   - component: {fileID: 1155529438}
+  - component: {fileID: 1155529440}
+  - component: {fileID: 1155529439}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
@@ -478,6 +480,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1155529439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155529436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491df8d556f55a04eb30b70d35a6e953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalState: {fileID: -4062185762836488186, guid: 282f7309d054091459c0b27bed026c51, type: 3}
+  hoverState: {fileID: 1566664360975409253, guid: 835bb7d38fe99cb44b2c8c4014d2001d, type: 3}
+  spriteRenderer: {fileID: 1155529438}
+  whoButtons: Back
+--- !u!61 &1155529440
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155529436}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.09, y: 2.06}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.09, y: 2.06}
+  m_EdgeRadius: 0
 --- !u!1 &1616226319
 GameObject:
   m_ObjectHideFlags: 0
