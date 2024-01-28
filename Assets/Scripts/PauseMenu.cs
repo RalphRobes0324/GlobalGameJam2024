@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseScreen;
+    public AudioSource music;
 
     public void Resume()
     {
         pauseScreen.SetActive(false); // close pause screen
+        Time.timeScale = 1f; // unfreeze objects
+        music.Play(); // play music
     }
 
     public void Exit()
@@ -26,11 +29,14 @@ public class PauseMenu : MonoBehaviour
             {
                 pauseScreen.SetActive(true); // open pause menu
                 Time.timeScale = 0f; // freeze objects
+                music.Pause(); // pause music
+
             }
             else
             {
                 pauseScreen.SetActive(false); // close pause menu
                 Time.timeScale = 1f; // unfreeze objects
+                music.Play(); // play music
             }
         }
     }
