@@ -10,6 +10,9 @@ public class Player : GameManager
 	GameObject comedianObject;
 	Comedian comedian;
 
+	GameObject ScoreManager;
+	scoreManager scoreScript;
+
 	public float totalScore = 0.0f;
 	public float currentJokeScore = 0.0f;
 	public bool laughedAtJoke = false;
@@ -21,6 +24,9 @@ public class Player : GameManager
 		gameManager = gameManagerObject.GetComponent<GameManager>();
 		comedianObject = GameObject.Find("obj_comedian");
 		comedian = comedianObject.GetComponent<Comedian>();
+
+		ScoreManager = GameObject.Find("scoreManager");
+		scoreScript = ScoreManager.GetComponent<scoreManager>();
 
 		animator = GetComponent<Animator>();
 	}
@@ -34,6 +40,7 @@ public class Player : GameManager
 			if (gameManager.typeRound == 1 && currentJokeScore >= 15.0f && !laughedAtJoke)
 			{
 				totalScore += currentJokeScore;
+				scoreScript.finalScore = totalScore;
 				currentJokeScore = 0.0f;
 				laughedAtJoke = true;
 			}
