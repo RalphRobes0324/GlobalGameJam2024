@@ -11,12 +11,16 @@ public class Comedian : GameManager
     private string[] jokes = { "!", "@",
     "#", "$", "%", "^", "&", "*", "(", ")"};
     private char[] calculateJokeChar; //calculating each symbol worth
-    
+
+
+
     //Main functions of Comedian
+    private bool startTimer;
     public float finalJokeScore;
     public bool statusCo;
     public bool RoundStart;
-    
+    public float countdownMinutes;
+
     //Get Audience Script and its variables
     GameObject audienceObject;
     GameObject playerObject;
@@ -37,6 +41,7 @@ public class Comedian : GameManager
         player = playerObject.GetComponent<Player>();
         statusCo = true;
         RoundStart = false;
+        countdownMinutes = 60.0f;
     }
     //Update every frame
     private void Update()
@@ -55,16 +60,13 @@ public class Comedian : GameManager
             else //Checks for other conditions
             {
                 //Checks if audience is done reacting to joke
-                if (!statusCo && !audience.statusAudi)
+                if (!statusCo && !audience.statusAudi && !startTimer)
                 {
                     finalJokeScore = 0.0f; //reset score
                     statusCo = true; //start over again
                 }
-            }
-        }
-        else
-        {
 
+            }
         }
 
     }
