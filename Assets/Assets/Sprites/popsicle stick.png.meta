@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      popsicle stick_0: 255774405795994279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
