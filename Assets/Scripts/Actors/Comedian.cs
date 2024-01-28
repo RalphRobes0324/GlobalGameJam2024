@@ -1,131 +1,133 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 
-public class Comedian : MonoBehaviour
+public class Comedian : GameManager
 {
-    public enum JokeScore
-    {
-        exclamtionPoint = 1, //! = 1
-        atPoint = 2, //@ = 2
-        hashTagPoint = 3, //# = 3
-        dolloarPoint = 4, // $ = 4 
-        precentPoint = 5, //% = 5
-        powerPoint = 6, // ^ = 6
-        andPoint = 7, // & = 7
-        starPoint = 8, // * = 8
-        leftBracket = 9, // ( = 9
-        rightBracket = 0, // ) = 0
+    //Jokes Symbol
+    private string[] jokes = { "!", "@",
+    "#", "$", "%", "^", "&", "*", "(", ")"};
+    private char[] calculateJokeChar; //calculating each symbol worth
+    
+    //Main functions of Comedian
+    public float finalJokeScore;
+    public bool statusCo;
+    
+    //Get Audience Script and its variables
+    GameObject audienceObject;
+    Audience audience;
 
-    }
-    //Set up different type of joke
-    private string[] comedianJokes = {
-        "!", "@", "#", "$", "%", "^", "&",
-        "*", "(", ")"
-    };
-
-   
-
-    //Track of jokes being created
-    private string comedianMakeJoke;
-    private int lengthJoke;
-    public bool doneMakingJoke;
-
-    public int jokeScore;
-
-    private int finalScore;
-
+    //Starts when program begin
     private void Start()
     {
-        lengthJoke = comedianJokes.Length; //get length
-        doneMakingJoke = false; //start creation
-        jokeScore = 0;
-        
+        audienceObject = GameObject.Find("obj_Audience");
+        audience = audienceObject.GetComponent<Audience>();
+        statusCo = true;
     }
+    //Update every frame
     private void Update()
     {
-        if (!doneMakingJoke) //checks joke is not made yet
+        if(statusCo) //Check Comedian is ready for a joke
         {
-            comedianMakeJoke = GetJokeRandom(); //get Joke
-            Debug.Log(comedianMakeJoke);
+            string comedianJoke = CreateJoke(); //Create joke
+            finalJokeScore = GetScore(comedianJoke); // get Score
+            
+            statusCo = false; //Joke has been made
+            
         }
-        if(doneMakingJoke && jokeScore == 0)
+        else //Checks for other conditions
         {
-            jokeScore = GetScore(comedianMakeJoke);
-            Debug.Log(jokeScore);
+            //Checks if audience is done reacting to joke
+            if(!statusCo && !audience.statusAudi)
+            {
+                finalJokeScore = 0.0f; //reset score
+                statusCo = true; //start over again
+            }
         }
-        
+
     }
 
-    private int GetScore(string comedianMakeJoke)
+    /// <summary>
+    /// Gets Total Score
+    /// </summary>
+    /// <param name="comedianJoke"></param>
+    /// <returns></returns>
+    private float GetScore(string comedianJoke)
     {
-        
-        char[] checkPoints = comedianMakeJoke.ToCharArray();
-        foreach(char c in checkPoints)
+        calculateJokeChar = comedianJoke.ToCharArray();
+        foreach (char c in calculateJokeChar)
         {
-            if(c == '!')
+            if (c == '!')
             {
-                finalScore += (int)JokeScore.exclamtionPoint;
+                finalJokeScore += (float)JokeScore.exclamationPoint;
             }
-            else if(c == '@')
+            else if (c == '@')
             {
-                finalScore += (int)JokeScore.atPoint;
+                finalJokeScore += (float)JokeScore.atPoint;
             }
-            else if( c == '#')
+            else if (c == '#')
             {
-                finalScore += (int)JokeScore.hashTagPoint;
+                finalJokeScore += (float)JokeScore.hashPoint;
             }
-            else if(c == '$')
+            else if (c == '$')
             {
-                finalScore += (int)JokeScore.dolloarPoint;
+                finalJokeScore += (float)JokeScore.dollarPoint;
             }
-            else if(c == '%')
+            else if (c == '%')
             {
-                finalScore += (int)JokeScore.precentPoint;
+                finalJokeScore += (float)JokeScore.precentPoint;
             }
-            else if(c == '^')
+            else if (c == '^')
             {
-                finalScore += (int)JokeScore.powerPoint;
+                finalJokeScore += (float)JokeScore.powerPoint;
             }
-            else if(c == '&')
+            else if (c == '&')
             {
-                finalScore += (int)JokeScore.andPoint;
+                finalJokeScore += (float)JokeScore.andPoint;
             }
-            else if(c == '*')
+            else if (c == '*')
             {
-                finalScore += (int)JokeScore.starPoint;
+                finalJokeScore += (float)JokeScore.starPoint;
             }
-            else if(c == '(')
+            else if (c == '(')
             {
-                finalScore += (int)JokeScore.leftBracket;
+                finalJokeScore += (float)JokeScore.leftBracket;
             }
             else
             {
-                finalScore += 0;
+                finalJokeScore += 0;
             }
         }
-        return finalScore;
+        return finalJokeScore;
     }
 
-
-    //Get Random jokes
-    private string GetJokeRandom()
+    /// <summary>
+    /// Creates for Comedian to make
+    /// </summary>
+    /// <returns></returns>
+    private string CreateJoke()
     {
         string joke;
-        joke = comedianJokes[RandomNum()];
-        joke += comedianJokes[RandomNum()];
-        joke += comedianJokes[RandomNum()];
-        joke += comedianJokes[RandomNum()];
-        joke += comedianJokes[RandomNum()];
-        joke += comedianJokes[RandomNum()];
-        doneMakingJoke = true;
+        joke = jokes[RandomPos()];
+        joke += jokes[RandomPos()];
+        joke += jokes[RandomPos()];
+        joke += jokes[RandomPos()];
+        joke += jokes[RandomPos()];
+        joke += jokes[RandomPos()];
         return joke;
     }
 
-    //Get Random position of index based on range
-    private int RandomNum()
+    /// <summary>
+    /// Gets Random position in the array
+    /// </summary>
+    /// <returns></returns>
+    private int RandomPos()
     {
-        int pos = UnityEngine.Random.Range(0, lengthJoke);
+        int pos = UnityEngine.Random.Range(0, jokes.Length);
         return pos;
+
     }
-    
 }
