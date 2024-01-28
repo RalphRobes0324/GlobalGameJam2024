@@ -26,7 +26,6 @@ public class Audience : GameManager
         comedianObject = GameObject.Find("obj_comedian");
         comedian = comedianObject.GetComponent<Comedian>();
         statusAudi = false; //Audi is ready
-        audiHumourLevel = 1.5f;
         getLaughter = "";
     }
     private void Update()
@@ -41,7 +40,7 @@ public class Audience : GameManager
         {
             if (comedian.finalJokeScore > 0.0f)
 			{
-				float judgeThejoke = comedian.finalJokeScore / audiHumourLevel; //get Avg
+				float judgeThejoke = comedian.finalJokeScore; //get Avg
 				getLaughter = checkLaugh(judgeThejoke);
 			}
             statusAudi = false; //Stop reacting

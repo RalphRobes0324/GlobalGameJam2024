@@ -12,7 +12,7 @@ public class Comedian : GameManager
     "#", "$", "%", "^", "&", "*", "(", ")"};
     private char[] calculateJokeChar; //calculating each symbol worth
 
-	Animator animator;
+	public Animator animator;
 
 	//Main functions of Comedian
 	public float finalJokeScore = 0.0f;
@@ -25,7 +25,11 @@ public class Comedian : GameManager
     GameManager gameManager;
     Audience audience;
 
-    int armSwinging = 0;
+	Player player;
+
+	GameObject playerObject;
+
+	int armSwinging = 0;
 
     //Starts when program begin
     private void Start()
@@ -36,21 +40,24 @@ public class Comedian : GameManager
         gameManagerObject = GameObject.Find("Game Manager");
         gameManager = gameManagerObject.GetComponent<GameManager>();
         statusCo = true;
-        
-        animator = gameManager.GetComponent<Animator>();
 
-        countdownMinutes = 60.0f;
+		playerObject = GameObject.Find("obj_player");
+		player = playerObject.GetComponent<Player>();
+
+		countdownMinutes = 60.0f;
     }
     //Update every frame
     private void Update()
     {
             if (gameManager.typeRound == 0) //Check Comedian is ready for a joke
             {
+			    animator.SetBool("isStaring", false);
 			    animator.SetBool("isTalking", true);
 			    if (finalJokeScore <= 0.0f)
 				{
 					string comedianJoke = CreateJoke(); //Create joke
 					finalJokeScore = GetScore(comedianJoke); // get Score
+                    player.currentJokeScore = finalJokeScore; 
 					statusCo = false; //Joke has been made
                     armSwinging = UnityEngine.Random.Range(0, 1);    if (armSwinging == 0) { animator.SetBool("armSwinging", false); }
                     else { animator.SetBool("armSwinging", true); }
@@ -68,7 +75,9 @@ public class Comedian : GameManager
                 }
                 if (gameManager.typeRound == 2)
                 {
-				    animator.SetBool("isStaring", false);
+				    animator.SetBool("isStaring", true);
+                    finalJokeScore = 0.0f;
+				    statusCo = true; //start over again
 			    }
             }
             

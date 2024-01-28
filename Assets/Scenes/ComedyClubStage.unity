@@ -2112,6 +2112,9 @@ MonoBehaviour:
   AudiencesGameObject: []
   laughing: 0
   embarrassed: 0
+  totalScore: 0
+  currentJokeScore: 0
+  laughedAtJoke: 0
 --- !u!1 &732828459
 GameObject:
   m_ObjectHideFlags: 0
@@ -5342,6 +5345,7 @@ MonoBehaviour:
   gameTimer: 0
   roundTimer: 0
   AudiencesGameObject: []
+  animator: {fileID: 2092513040}
   finalJokeScore: 0
   statusCo: 0
   countdownMinutes: 0

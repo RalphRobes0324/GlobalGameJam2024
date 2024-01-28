@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
                     case 2:
                         Debug.Log("the staring ends");
                         typeRound = 0;
-                        roundTimer = 4.0f;
+                        roundTimer = 5.0f;
                         break;
                 }
             }
@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
         {
             //add thing that makes game over happen
             //like change the scene to the score screen or something
+
         }
     }
 	private void FixedUpdate()
