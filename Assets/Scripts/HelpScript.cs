@@ -7,6 +7,6 @@ public class HelpScript : MonoBehaviour
 {
     public void GoButton()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("ComedyClubStage");
     }
 }
