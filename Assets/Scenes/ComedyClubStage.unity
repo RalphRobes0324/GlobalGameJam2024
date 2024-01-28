@@ -5867,6 +5867,7 @@ Animator:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1393277308}
   - {fileID: 546621209}
   - {fileID: 1144997247}
   - {fileID: 2092513039}
@@ -5877,4 +5878,3 @@ SceneRoots:
   - {fileID: 1882505571}
   - {fileID: 882920905}
   - {fileID: 755481763}
-  - {fileID: 1393277308}

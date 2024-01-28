@@ -54,6 +54,7 @@ public class Player : GameManager
 				{
 					gameManager.typeRound = 2;
 					gameManager.roundTimer = 3.0f;
+					laughedAtJoke = false;
 
 				}
 			}

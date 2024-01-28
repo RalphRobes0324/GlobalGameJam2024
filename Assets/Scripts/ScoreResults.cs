@@ -8,12 +8,18 @@ public class ScoreResults : MonoBehaviour
 {
     public Sprite goodResult;
     public Sprite badResult;
-    public int scoreResults = 50;
+    GameObject ScoreManager;
+    scoreManager scoreScript;
+    public float scoreResults;
     void Start()
     {
+        ScoreManager = GameObject.Find("scoreManager");
+        scoreScript = ScoreManager.GetComponent<scoreManager>();
+        scoreResults = scoreScript.finalScore;
+        Destroy(ScoreManager);
         Image result = GetComponent<Image>();
 
-        if (scoreResults >= 50)
+        if (scoreResults > 0)
         {
             result.sprite = goodResult;
         }
