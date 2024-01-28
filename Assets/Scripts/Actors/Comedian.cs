@@ -7,22 +7,27 @@ using UnityEngine;
 
 public class Comedian : GameManager
 {
+    //Jokes Symbol
     private string[] jokes = { "!", "@",
     "#", "$", "%", "^", "&", "*", "(", ")"};
-    private char[] calculateJokeChar;
+    private char[] calculateJokeChar; //calculating each symbol worth
     
+    //Main functions of Comedian
     public float finalJokeScore;
     public bool statusCo;
     
-
+    //Get Audience Script and its variables
     GameObject audienceObject;
     Audience audience;
+
+    //Starts when program begin
     private void Start()
     {
         audienceObject = GameObject.Find("obj_Audience");
         audience = audienceObject.GetComponent<Audience>();
         statusCo = true;
     }
+    //Update every frame
     private void Update()
     {
         if(statusCo) //Check Comedian is ready for a joke
