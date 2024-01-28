@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
                    // 1 = comedian done telling joke
                    // 2 = comedian and audience stare
                    // each round should be 5 or so seconds
-    public bool roundState = true;
     public float gameTimer;
     public float roundTimer;
     
@@ -33,24 +32,26 @@ public class GameManager : MonoBehaviour
 
     GameObject comedianObject;
     Comedian comedian;
+	Player player;
 
-   
+	GameObject playerObject;
 
-    private void Start()
+	private void Start()
     {
-        comedianObject = GameObject.Find("obj_Comedian");
+        comedianObject = GameObject.Find("obj_comedian");
         comedian = comedianObject.GetComponent<Comedian>();
-        gameTimer = 10.0f;
-        roundTimer = 3.0f;
+        gameTimer = 180.0f;
+        roundTimer = 5.0f;
 
-    }
+		playerObject = GameObject.Find("obj_player");
+		player = playerObject.GetComponent<Player>();
+	}
 
     private void Update()
     {
         if(gameTimer > 0.0f)
         {
             gameTimer -= Time.deltaTime;
-            Debug.Log("Game timer: " + gameTimer);
             if (roundTimer > 0.0f)
             {
                 roundTimer -= Time.deltaTime;
@@ -63,20 +64,17 @@ public class GameManager : MonoBehaviour
                     case 0:
                         Debug.Log("joke over, laugh time");
                         typeRound = 1;
-                        roundState = false;
-                        roundTimer = 3.0f;
+                        roundTimer = 5.0f;
                         break;
                     case 1:
                         Debug.Log("laugh over, joke time");
                         typeRound = 0;
-                        roundState = false;
-                        roundTimer = 3.0f;
+                        roundTimer = 5.0f;
                         break;
                     case 2:
                         Debug.Log("the staring ends");
                         typeRound = 0;
-                        roundState = false;
-                        roundTimer = 3.0f;
+                        roundTimer = 5.0f;
                         break;
                 }
             }
@@ -85,10 +83,15 @@ public class GameManager : MonoBehaviour
         {
             //add thing that makes game over happen
             //like change the scene to the score screen or something
-        }
-        
 
-        
+        }
     }
+	private void FixedUpdate()
+	{
+		//if (comedian.finalJokeScore )
+        //{
+
+       // }
+	}
 
 }

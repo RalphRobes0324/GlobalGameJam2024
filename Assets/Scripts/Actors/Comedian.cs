@@ -12,48 +12,56 @@ public class Comedian : GameManager
     "#", "$", "%", "^", "&", "*", "(", ")"};
     private char[] calculateJokeChar; //calculating each symbol worth
 
+	public Animator animator;
 
-
-    //Main functions of Comedian
-    public float finalJokeScore;
+	//Main functions of Comedian
+	public float finalJokeScore = 0.0f;
     public bool statusCo;
     public float countdownMinutes;
 
     //Get Audience Script and its variables
     GameObject audienceObject;
-    GameObject playerObject;
     GameObject gameManagerObject;
-    Player player;
     GameManager gameManager;
     Audience audience;
+
+	Player player;
+
+	GameObject playerObject;
+
+	int armSwinging = 0;
 
     //Starts when program begin
     private void Start()
     {
         //Getting Component
-        audienceObject = GameObject.Find("obj_Audience");
+        audienceObject = GameObject.Find("obj_audienceManager");
         audience = audienceObject.GetComponent<Audience>();
         gameManagerObject = GameObject.Find("Game Manager");
         gameManager = gameManagerObject.GetComponent<GameManager>();
-        playerObject = GameObject.Find("obj_Player");
-        player = playerObject.GetComponent<Player>();
         statusCo = true;
-        
 
-        countdownMinutes = 60.0f;
+		playerObject = GameObject.Find("obj_player");
+		player = playerObject.GetComponent<Player>();
+
+		countdownMinutes = 60.0f;
     }
     //Update every frame
     private void Update()
     {
-        //Check Round is done
-        if (gameManager.roundState)
-        {
             if (gameManager.typeRound == 0) //Check Comedian is ready for a joke
             {
-                string comedianJoke = CreateJoke(); //Create joke
-                finalJokeScore = GetScore(comedianJoke); // get Score
-
-                statusCo = false; //Joke has been made
+			    animator.SetBool("isStaring", false);
+			    animator.SetBool("isTalking", true);
+			    if (finalJokeScore <= 0.0f)
+				{
+					string comedianJoke = CreateJoke(); //Create joke
+					finalJokeScore = GetScore(comedianJoke); // get Score
+                    player.currentJokeScore = finalJokeScore; 
+					statusCo = false; //Joke has been made
+                    armSwinging = UnityEngine.Random.Range(0, 1);    if (armSwinging == 0) { animator.SetBool("armSwinging", false); }
+                    else { animator.SetBool("armSwinging", true); }
+				}
 
             }
             else //Checks for other conditions
@@ -61,13 +69,18 @@ public class Comedian : GameManager
                 //Checks if audience is done reacting to joke
                 if (gameManager.typeRound == 1 && !audience.statusAudi)
                 {
-                    
-                    finalJokeScore = 0.0f; //reset score
+				    animator.SetBool("isTalking", false);
+				    finalJokeScore = 0.0f; //reset score
                     statusCo = true; //start over again
                 }
-
+                if (gameManager.typeRound == 2)
+                {
+				    animator.SetBool("isStaring", true);
+                    finalJokeScore = 0.0f;
+				    statusCo = true; //start over again
+			    }
             }
-        }
+            
 
     }
 
