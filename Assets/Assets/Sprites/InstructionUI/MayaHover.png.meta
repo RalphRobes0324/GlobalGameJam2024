@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MayaHover_0: -927520240751057016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

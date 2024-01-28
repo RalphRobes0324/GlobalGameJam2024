@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PeterNotHover_0: 8216754351505980709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

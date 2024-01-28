@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ElijahNoHover_0: 1898384417648243461
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
