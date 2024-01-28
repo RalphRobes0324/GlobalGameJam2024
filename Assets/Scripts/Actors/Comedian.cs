@@ -15,10 +15,8 @@ public class Comedian : GameManager
 
 
     //Main functions of Comedian
-    private bool startTimer;
     public float finalJokeScore;
     public bool statusCo;
-    public bool RoundStart;
     public float countdownMinutes;
 
     //Get Audience Script and its variables
@@ -40,16 +38,17 @@ public class Comedian : GameManager
         playerObject = GameObject.Find("obj_Player");
         player = playerObject.GetComponent<Player>();
         statusCo = true;
-        RoundStart = false;
+        
+
         countdownMinutes = 60.0f;
     }
     //Update every frame
     private void Update()
     {
         //Check Round is done
-        if (RoundStart)
+        if (gameManager.roundState)
         {
-            if (statusCo) //Check Comedian is ready for a joke
+            if (gameManager.typeRound == 0) //Check Comedian is ready for a joke
             {
                 string comedianJoke = CreateJoke(); //Create joke
                 finalJokeScore = GetScore(comedianJoke); // get Score
@@ -60,8 +59,9 @@ public class Comedian : GameManager
             else //Checks for other conditions
             {
                 //Checks if audience is done reacting to joke
-                if (!statusCo && !audience.statusAudi && !startTimer)
+                if (gameManager.typeRound == 1 && !audience.statusAudi)
                 {
+                    
                     finalJokeScore = 0.0f; //reset score
                     statusCo = true; //start over again
                 }
@@ -80,46 +80,40 @@ public class Comedian : GameManager
     {
         calculateJokeChar = comedianJoke.ToCharArray();
         foreach (char c in calculateJokeChar)
-        {
-            if (c == '!')
+        {   
+            switch (c)
             {
-                finalJokeScore += (float)JokeScore.exclamationPoint;
-            }
-            else if (c == '@')
-            {
-                finalJokeScore += (float)JokeScore.atPoint;
-            }
-            else if (c == '#')
-            {
-                finalJokeScore += (float)JokeScore.hashPoint;
-            }
-            else if (c == '$')
-            {
-                finalJokeScore += (float)JokeScore.dollarPoint;
-            }
-            else if (c == '%')
-            {
-                finalJokeScore += (float)JokeScore.precentPoint;
-            }
-            else if (c == '^')
-            {
-                finalJokeScore += (float)JokeScore.powerPoint;
-            }
-            else if (c == '&')
-            {
-                finalJokeScore += (float)JokeScore.andPoint;
-            }
-            else if (c == '*')
-            {
-                finalJokeScore += (float)JokeScore.starPoint;
-            }
-            else if (c == '(')
-            {
-                finalJokeScore += (float)JokeScore.leftBracket;
-            }
-            else
-            {
-                finalJokeScore += 0;
+                case '!':
+                    finalJokeScore += (float)JokeScore.exclamationPoint;
+                    break;
+                case '@':
+                    finalJokeScore += (float)JokeScore.atPoint;
+                    break;
+                case '#':
+                    finalJokeScore += (float)JokeScore.hashPoint;
+                    break;
+                case '$':
+                    finalJokeScore += (float)JokeScore.dollarPoint;
+                    break;
+                case '%':
+                    finalJokeScore += (float)JokeScore.precentPoint;
+                    break;
+                case '^':
+                    finalJokeScore += (float)JokeScore.powerPoint;
+                    break;
+                case '&':
+                    finalJokeScore += (float)JokeScore.andPoint;
+                    break;
+                case '*':
+                    finalJokeScore += (float)JokeScore.starPoint;
+                    break;
+                case '(':
+                    finalJokeScore += (float)JokeScore.leftBracket;
+                    break;
+                default:
+                    finalJokeScore += 0;
+                    break;
+           
             }
         }
         return finalJokeScore;
