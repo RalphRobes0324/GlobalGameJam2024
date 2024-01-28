@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public bool RoundDone;
     //Creating Point system for each Symbol
     public enum JokeScore
     {
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        RoundDone = true;
 
     }
 

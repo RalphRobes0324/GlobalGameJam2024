@@ -18,13 +18,18 @@ public class Comedian : GameManager
     
     //Get Audience Script and its variables
     GameObject audienceObject;
+    GameObject gameManagerObject;
+    GameManager gameManager;
     Audience audience;
 
     //Starts when program begin
     private void Start()
     {
+        //Getting Component
         audienceObject = GameObject.Find("obj_Audience");
         audience = audienceObject.GetComponent<Audience>();
+        gameManagerObject = GameObject.Find("Game Manager");
+        gameManager = gameManagerObject.GetComponent<GameManager>();
         statusCo = true;
     }
     //Update every frame
