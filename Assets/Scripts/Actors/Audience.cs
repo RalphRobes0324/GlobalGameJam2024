@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Audience : GameManager
 {
+    //Get Comedian Script and its variables
     GameObject comedianObject;
     Comedian comedian;
 
+    //Main functions of Audience
     public bool statusAudi;
     public float audiHumourLevel;
+
+    
     private void Start()
     {
         comedianObject = GameObject.Find("obj_Comedian");
@@ -26,7 +30,8 @@ public class Audience : GameManager
         //Start reaction to joke
         if(statusAudi)
         {
-            Debug.Log(comedian.finalJokeScore);
+            float judgeThejoke = comedian.finalJokeScore / audiHumourLevel;
+            Debug.Log(judgeThejoke);
             statusAudi = false;
         }
 
