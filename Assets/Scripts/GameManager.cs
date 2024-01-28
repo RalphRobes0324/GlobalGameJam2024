@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         comedianObject = GameObject.Find("obj_comedian");
         comedian = comedianObject.GetComponent<Comedian>();
-        gameTimer = 180.0f;
+        gameTimer = 60.0f;
         roundTimer = 5.0f;
 
 		playerObject = GameObject.Find("obj_player");
