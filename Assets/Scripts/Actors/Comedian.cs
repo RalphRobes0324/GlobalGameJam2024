@@ -12,10 +12,10 @@ public class Comedian : GameManager
     "#", "$", "%", "^", "&", "*", "(", ")"};
     private char[] calculateJokeChar; //calculating each symbol worth
 
+	Animator animator;
 
-
-    //Main functions of Comedian
-    public float finalJokeScore;
+	//Main functions of Comedian
+	public float finalJokeScore = 0.0f;
     public bool statusCo;
     public float countdownMinutes;
 
@@ -25,25 +25,25 @@ public class Comedian : GameManager
     GameManager gameManager;
     Audience audience;
 
+    int armSwinging = 0;
+
     //Starts when program begin
     private void Start()
     {
         //Getting Component
-        audienceObject = GameObject.Find("obj_Audience");
+        audienceObject = GameObject.Find("obj_audienceManager");
         audience = audienceObject.GetComponent<Audience>();
         gameManagerObject = GameObject.Find("Game Manager");
         gameManager = gameManagerObject.GetComponent<GameManager>();
         statusCo = true;
         
+        animator = gameManager.GetComponent<Animator>();
 
         countdownMinutes = 60.0f;
     }
     //Update every frame
     private void Update()
     {
-        //Check Round is done
-        if (gameManager.roundState)
-        {
             if (gameManager.typeRound == 0) //Check Comedian is ready for a joke
             {
                 if (finalJokeScore <= 0.0f)
@@ -51,6 +51,7 @@ public class Comedian : GameManager
 					string comedianJoke = CreateJoke(); //Create joke
 					finalJokeScore = GetScore(comedianJoke); // get Score
 					statusCo = false; //Joke has been made
+                    armSwinging = UnityEngine.Random.Range(0, 1);    
 				}
 
             }
@@ -65,7 +66,7 @@ public class Comedian : GameManager
                 }
 
             }
-        }
+        
 
     }
 
