@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ComicFootUpSTARE3_0: -8642657994794190959
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
