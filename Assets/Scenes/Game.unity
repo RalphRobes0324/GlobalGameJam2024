@@ -215,6 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1148829847}
   - component: {fileID: 1148829846}
+  - component: {fileID: 1148829848}
   m_Layer: 0
   m_Name: obj_Player
   m_TagString: Untagged
@@ -291,6 +292,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1148829848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148829845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ee8186bf71f2c4eb25e669ea553d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1553813048
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,11 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1d0afa8ac45941b6c39f3a89c8511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreTheJoke: 0
-  statusAudi: 0
-  humourLevel: 0
-  comedian: {fileID: 0}
-  comedianScript: {fileID: 0}
 --- !u!212 &1875506415
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -586,24 +594,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49bb61b6cc6da049843aa6fa98acf19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comedianJokes:
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - ^
-  - '&'
-  - '*'
-  - (
-  - )
-  audience: {fileID: 0}
-  audienceScript: {fileID: 0}
-  comedianMakeJoke: 
-  lengthJoke: 0
-  doneMakingJoke: 0
-  jokeScore: 0
-  finalScore: 0
+  finalJokeScore: 0
+  statusCo: 0
+  statusAudi: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
