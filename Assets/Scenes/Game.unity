@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 1875506415}
   - component: {fileID: 1875506414}
   m_Layer: 0
-  m_Name: 'Audience '
+  m_Name: 'obj_Audience '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,9 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1d0afa8ac45941b6c39f3a89c8511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comedianMakeJoke: 
-  doneMakingJoke: 0
-  jokeScore: 0
+  statusAudi: 0
+  humourLevel: 0
 --- !u!212 &1875506415
 SpriteRenderer:
   m_ObjectHideFlags: 0

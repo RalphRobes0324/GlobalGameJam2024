@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Audience : MonoBehaviour
 {
-    private int scoreTheJoke;
-    private int humourLevel;
+    private float scoreTheJoke;
+    private bool statusComedian;
+    public bool statusAudi;
 
-    GameObject comedian;
-    Comedian comedianScript;
+    [Header("Control Humour Level")]
+    public float humourLevel;
+
+    private GameObject comedian;
+    private Comedian comedianScript;
     
     // Start is called before the first frame update
     private void Start()
@@ -16,12 +20,25 @@ public class Audience : MonoBehaviour
 
         comedian = GameObject.Find("obj_Comedian");
         comedianScript = comedian.GetComponent<Comedian>();
+        humourLevel = 1.5f;
+        statusAudi = false;
 
     }
 
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(comedianScript.comedianMakeJoke);
+
+        scoreTheJoke = comedianScript.jokeScore;
+        statusComedian = comedianScript.doneMakingJoke;
+        if(statusComedian && !statusAudi)
+        {
+            Debug.Log(scoreTheJoke);
+            statusAudi = true; //Ready listen to next joke
+            
+        }
+
+        
+        
     }
 }

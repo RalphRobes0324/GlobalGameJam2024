@@ -23,6 +23,8 @@ public class Comedian : MonoBehaviour
         "*", "(", ")"
     };
 
+    private GameObject audience;
+    private Audience audienceScript;
    
 
     //Track of jokes being created
@@ -31,25 +33,37 @@ public class Comedian : MonoBehaviour
     public bool doneMakingJoke;
     public float jokeScore;
     private float finalScore;
+    
 
     private void Start()
     {
         lengthJoke = comedianJokes.Length; //get length
         doneMakingJoke = false; //start creation
-        jokeScore = 0;
+        jokeScore = 0; //Default Score to zero
+
+        audience = GameObject.Find("obj_Audience");
+        audienceScript = audience.GetComponent<Audience>();
         
     }
     private void Update()
     {
-        if (!doneMakingJoke) //checks joke is not made yet
+        bool statusAudi = audienceScript.statusAudi;
+        if (!doneMakingJoke && statusAudi) //checks joke is not made yet
         {
             comedianMakeJoke = GetJokeRandom(); //get Joke
+            doneMakingJoke = true;
             
+
         }
-        if(doneMakingJoke && jokeScore == 0) //Checks joke is done
+        if(doneMakingJoke && jokeScore == 0.0f) //Checks joke is done
         {
             jokeScore = GetScore(comedianMakeJoke);
-           
+            //Debug.Log(jokeScore);
+         
+        }
+        if (statusAudi)
+        {
+            jokeScore = 0.0f;
         }
         
     }
@@ -116,7 +130,7 @@ public class Comedian : MonoBehaviour
         joke += comedianJokes[RandomNum()];
         joke += comedianJokes[RandomNum()];
         joke += comedianJokes[RandomNum()];
-        doneMakingJoke = true;
+        
         
         return joke;
     }
